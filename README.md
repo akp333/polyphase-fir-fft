@@ -49,7 +49,7 @@ Counting real operations per frame of 8 samples (coefficients with the twiddle f
 | 8 independent direct-form channels | 320 | 306 |
 | Polyphase FIR + FFT | 34 (32 FIR + 2 FFT) | 48 (24 FIR + 24 FFT) |
 
-The FFT needs only two real multiplications. The one non-trivial twiddle factor is $1/\sqrt{2}$, and the 4-point DFTs have real inputs, so several outputs cost no adders. Full derivation: see [`docs/report.pdf`](docs/report.pdf).
+The FFT needs only two real multiplications. The one non-trivial twiddle factor is $1/\sqrt{2}$, and the 4-point DFTs have real inputs, so several outputs cost no adders.
 
 ## Fixed-point design
 
@@ -68,8 +68,6 @@ $$\varepsilon_Y < 2^{14}\,\bigl|\delta\bigr| + \tfrac{1}{8}, \qquad \delta = \tf
 For $B=7$ ($C=91$) this bound is far above 2, so 7 bits are not enough. For $B=8$ ($C=181$) it gives $\varepsilon_Y \approx 1.36 < 2$, so the ±2 LSB limit is guaranteed. A randomized fixed-point simulation agrees with the bound.
 
 ## Architecture
-
-![Datapath diagram](docs/datapath.png)
 
 **FIR (4 multipliers).** A 25-register delay line holds the last 25 samples. Taps at delays 0, 8, 16 and 24 feed four 16×16 multipliers. Each clock cycle computes one branch $r$ (the branch number counts $7, 6, \dots, 0$), using four coefficients $h[r], h[8+r], h[16+r], h[24+r]$ from loadable coefficient registers. Eight cycles complete one frame. Four multipliers is the minimum for one sample per cycle, because 32 products are needed in 8 cycles.
 
@@ -93,7 +91,7 @@ For $B=7$ ($C=91$) this bound is far above 2, so 7 bits are not enough. For $B=8
 
 ## Interface
 
-Top module: `channelizer_top` in [`rtl/channelizer_top.v`](rtl/channelizer_top.v).
+Top module: `channelizer_top`
 
 | Port | Dir | Description |
 |---|---|---|
