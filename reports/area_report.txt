@@ -1,0 +1,44 @@
+
+11. Printing statistics.
+
+=== channelizer_top ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+    14393        - wires
+    17003        - wire bits
+       64        - public wires
+     2050        - public wire bits
+       11        - ports
+       77        - port bits
+    14673 2.26E+04 cells
+      495   526.68   AND2_X1
+      377   501.41   AND3_X1
+       65   103.74   AND4_X1
+      210    279.3   AOI211_X1
+     1207 1.28E+03   AOI21_X1
+       11   17.556   AOI221_X1
+      216   287.28   AOI22_X1
+     1662 7.52E+03   DFF_X1
+     1043  554.876   INV_X1
+     1044 1.94E+03   MUX2_X1
+     1751  1.4E+03   NAND2_X1
+      222  236.208   NAND3_X1
+       20     26.6   NAND4_X1
+     1366 1.09E+03   NOR2_X1
+      183  194.712   NOR3_X1
+       23    30.59   NOR4_X1
+       27    35.91   OAI211_X1
+     1283 1.37E+03   OAI21_X1
+        6    9.576   OAI221_X1
+       44    58.52   OAI22_X1
+        3    5.586   OAI33_X1
+      391  416.024   OR2_X1
+      356   473.48   OR3_X1
+        5     7.98   OR4_X1
+     1483 2.37E+03   XNOR2_X1
+     1180  1883.28   XOR2_X1
+
+   Chip area for module '\channelizer_top': 22612.394000
+     of which used for sequential elements: 7515.564000 (33.24%)
